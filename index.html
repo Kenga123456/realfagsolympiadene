@@ -134,7 +134,7 @@
 
       #kalender {
         max-width: 1000px;
-        height: 750px;
+        aspect-ratio: 10 / 7;
         margin: 40px auto;
         text-align: center;
         padding: 0 5%;
@@ -143,10 +143,7 @@
       .calendar-section {
         border: 2px solid black;
         width: 100%;
-        height: 60%;
-      }
-
-      .event {
+        height: 100%;
       }
     </style>
   </head>
@@ -283,19 +280,34 @@
       </div>
     </div>
     <!-- https://calendar.google.com/calendar/u/0?cid=a29zdGFyZHZlcmNoaW9tQGdtYWlsLmNvbQ -->
-    <div id="kalender">
+    <div id="kalender" class="responsive-iframe">
       <h2>Kommende arrangementer</h2>
       <!-- <iframe
-        src="https://calendar.google.com/calendar/embed?src=568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%40group.calendar.google.com&ctz=Europe%2FOslo"
-        style="border: 0"
-        width="800"
-        height="600"
-        frameborder="0"
-        scrolling="no"
-      ></iframe> -->
+          src="https://calendar.google.com/calendar/embed?src=568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%40group.calendar.google.com&ctz=Europe%2FOslo"
+          style="border: 0"
+          width="800"
+          height="600"
+          frameborder="0"
+          scrolling="no"
+        ></iframe> -->
 
       <!-- Nettside brukt: https://open-web-calendar.hosted.quelltext.eu/index.html?language=en -->
       <!-- ICS url som er nødvendig: https://calendar.google.com/calendar/ical/568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%40group.calendar.google.com/public/basic.ics -->
+
+      <!-- <iframe
+        class="calendar-section"
+        id="open-web-calendar"
+        style="
+          background: url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif')
+            center center no-repeat;
+        "
+        src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?css=.dhx_month_body%2C%20.dhx_month_head%2C%20.dhx_cal_container%20%7B%20background-color%3A%20%23ffffff%3B%20%7D.dhx_after%20.dhx_month_body%2C%20.dhx_before%20.dhx_month_body%2C%20.dhx_after%20.dhx_month_head%2C%20.dhx_before%20.dhx_month_head%20%7B%20background-color%3A%20%23e5ffe7%3B%20%7D&amp;language=nb_NO&amp;skin=flat&amp;start_of_week=work&amp;tabs=month&amp;tabs=week&amp;tabs=agenda&amp;url=%20https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fical%2F568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%2540group.calendar.google.com%2Fpublic%2Fbasic.ics"
+        sandbox="allow-scripts allow-same-origin allow-top-navigation"
+        allowTransparency="true"
+        scrolling="no"
+        frameborder="0"
+      ></iframe> -->
+
       <iframe
         class="calendar-section"
         id="open-web-calendar"
@@ -303,11 +315,12 @@
           background: url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif')
             center center no-repeat;
         "
-        src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?css=.dhx_after%20.dhx_month_body%2C%20.dhx_before%20.dhx_month_body%2C%20.dhx_after%20.dhx_month_head%2C%20.dhx_before%20.dhx_month_head%20%7B%20background-color%3A%20%23e5ffe7%3B%20%7D&amp;language=nb_NO&amp;skin=flat&amp;tabs=month&amp;tabs=week&amp;tabs=day&amp;tabs=agenda&amp;url=%20https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fical%2F568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%2540group.calendar.google.com%2Fpublic%2Fbasic.ics"
+        src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?controls=date&amp;css=.dhx_month_body%2C%20.dhx_month_head%2C%20.dhx_cal_container%20%7B%20background-color%3A%20%23ffffff%3B%20%7D.dhx_after%20.dhx_month_body%2C%20.dhx_before%20.dhx_month_body%2C%20.dhx_after%20.dhx_month_head%2C%20.dhx_before%20.dhx_month_head%20%7B%20background-color%3A%20%23e5ffe7%3B%20%7D&amp;language=nb_NO&amp;skin=flat&amp;start_of_week=work&amp;tab=agenda&amp;tabs=agenda&amp;url=%20https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fical%2F568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%2540group.calendar.google.com%2Fpublic%2Fbasic.ics"
         sandbox="allow-scripts allow-same-origin allow-top-navigation"
         allowTransparency="true"
         scrolling="no"
         frameborder="0"
+        height="600px"
         width="100%"
       ></iframe>
     </div>
