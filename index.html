@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realfagsolympiader på Sandnes videregående skole</title>
+    <style>
+      body {
+        font-family: Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .navbar {
+        background-color: #267cd8;
+        padding: 25px 0;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        gap: 30px;
+      }
+
+      .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1em;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 2em;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        background-color: #e6f7ff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 0 10% 20px 10%;
+        padding-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+      }
+
+      .olympiad {
+        background-color: #fff;
+        border-radius: 10px;
+        border-bottom: 2px solid black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* overflow: hidden; */
+        width: 320px;
+        text-align: center;
+        transition: transform 0.2s ease;
+        margin-top: 40px;
+        padding-bottom: 8px;
+      }
+
+      .olympiad:hover {
+        transform: translateY(-5px);
+      }
+
+      .olympiad img {
+        width: 100%;
+        border-bottom: 3px solid black;
+        border-top: 3px solid black;
+
+        display: block;
+      }
+
+      .olympiad-content {
+        padding: 15px;
+      }
+
+      h2 {
+        color: #0056b3;
+      }
+
+      .olympiad-content h2 {
+        color: #0056b3;
+        font-size: 1.5em;
+        margin: 10px 0;
+      }
+
+      .olympiad-content p {
+        color: #666;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .olympiad-content a {
+      }
+
+      .olympiad-content a:hover {
+        background-color: #004494;
+      }
+
+      .lesKnapp {
+        background-color: red;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        background-color: #0056b3;
+        width: 70%;
+        padding: 12px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      iframe {
+        margin: 0;
+      }
+
+      #kalender {
+        max-width: 1000px;
+        margin: 40px auto;
+        text-align: center;
+      }
+
+      .calendar-section {
+        border: 2px solid black;
+      }
+
+      .event {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Realfagsolympiader på Sandnes videregående skole</h1>
+    </div>
+
+    <div class="navbar">
+      <ul>
+        <li><a href="#olympiader">Olympiader</a></li>
+        <li><a href="#kalender">Kalender</a></li>
+        <li><a href="#omOss">Om oss</a></li>
+      </ul>
+    </div>
+
+    <div class="container" id="olympiader">
+      <div class="olympiad">
+        <img src="./images/matte.jpg" alt="Abelkonkurransen" />
+        <div class="olympiad-content">
+          <h2>Abelkonkurransen</h2>
+          <p>
+            Abelkonkurransen er en anerkjent matematikkonkurranse for elever i
+            videregående skole.
+          </p>
+          <a
+            class="lesKnapp"
+            href="https://www.matematikksenteret.no/konkurranser/abelkonkurransen"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+      </div>
+
+      <div class="olympiad">
+        <img src="./images/fysikk.jpg" alt="Fysikkolympiaden" />
+        <div class="olympiad-content">
+          <h2>Fysikkolympiaden</h2>
+          <p>
+            Bli med på Fysikkolympiaden og test dine fysikkunnskaper i en
+            internasjonal konkurranse.
+          </p>
+          <a
+            class="lesKnapp"
+            href="https://www.uis.no/nb/institutt-for-matematikk-og-fysikk/fysikkolympiaden"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+      </div>
+
+      <div class="olympiad">
+        <img src="./images/it.jpg" alt="Informatikkolympiaden" />
+        <div class="olympiad-content">
+          <h2>Informatikkolympiaden</h2>
+          <p>
+            Utfordre dine ferdigheter i programmering og algoritmisk
+            problemløsning i Informatikkolympiaden.
+          </p>
+          <a class="lesKnapp" href="https://nio.no/" target="_blank">Les mer</a>
+        </div>
+      </div>
+
+      <div class="olympiad">
+        <img src="./images/kjemi.jpg" alt="Kjemiolympiaden" />
+        <div class="olympiad-content">
+          <h2>Kjemiolympiaden</h2>
+          <p>
+            Kjemiolympiaden gir deg mulighet til å vise dine kunnskaper i kjemi
+            og delta i nasjonale og internasjonale konkurranser.
+          </p>
+          <a
+            class="lesKnapp"
+            href="https://foreninger.uio.no/kjemiolympiaden/"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+      </div>
+
+      <div class="olympiad">
+        <img src="./images/biologi.jpg" alt="Biologiolympiaden" />
+        <div class="olympiad-content">
+          <h2>Biologiolympiaden</h2>
+          <p>
+            Biologiolympiaden utfordrer deg til å vise dine ferdigheter i
+            biologi gjennom en serie komplekse oppgaver.
+          </p>
+          <a
+            class="lesKnapp"
+            href="https://www.mn.uio.no/ibv/om/biologi-ol/"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+      </div>
+
+      <div class="olympiad">
+        <img
+          src="./images/astronomi.jpg"
+          alt="Astronomi- og Astrofysikkolympiaden"
+        />
+        <div class="olympiad-content">
+          <h2>Astronomi- og Astrofysikkolympiaden</h2>
+          <p>
+            Test dine kunnskaper om universet i Astronomi- og
+            Astrofysikkolympiaden, en konkurranse for de med interesse for
+            verdensrommet.
+          </p>
+          <a
+            class="lesKnapp"
+            href="https://www.mn.uio.no/astro/tjenester/publikum/ol-astronomi-og-astrofysikk/"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+      </div>
+
+      <div class="olympiad">
+        <img src="./images/geofag.jpg" alt="Geofagolympiaden" />
+        <div class="olympiad-content">
+          <h2>Geofagolympiaden</h2>
+          <p>
+            Bli med på Geofagolympiaden og utfordre deg selv i emner som
+            geologi, meteorologi, og miljøvitenskap.
+          </p>
+          <a
+            class="lesKnapp"
+            href="https://www.geologi.no/geofag/geofag-ol/om-geo-ol"
+            target="_blank"
+            >Les mer</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- https://calendar.google.com/calendar/u/0?cid=a29zdGFyZHZlcmNoaW9tQGdtYWlsLmNvbQ -->
+    <div id="kalender">
+      <h2>Kommende arrangementer</h2>
+      <!-- <iframe
+        src="https://calendar.google.com/calendar/embed?src=568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%40group.calendar.google.com&ctz=Europe%2FOslo"
+        style="border: 0"
+        width="800"
+        height="600"
+        frameborder="0"
+        scrolling="no"
+      ></iframe> -->
+
+      <!-- Nettside brukt: https://open-web-calendar.hosted.quelltext.eu/index.html?language=en -->
+      <!-- ICS url som er nødvendig: https://calendar.google.com/calendar/ical/568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%40group.calendar.google.com/public/basic.ics -->
+      <iframe
+        class="calendar-section"
+        id="open-web-calendar"
+        style="
+          background: url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif')
+            center center no-repeat;
+        "
+        src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?css=.dhx_after%20.dhx_month_body%2C%20.dhx_before%20.dhx_month_body%2C%20.dhx_after%20.dhx_month_head%2C%20.dhx_before%20.dhx_month_head%20%7B%20background-color%3A%20%23e5ffe7%3B%20%7D&amp;language=nb_NO&amp;skin=flat&amp;tabs=month&amp;tabs=week&amp;tabs=day&amp;tabs=agenda&amp;url=%20https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fical%2F568a232b0e0838c80d2d29d5c58965c1e09b91e98501cd9b5478284361e3e22b%2540group.calendar.google.com%2Fpublic%2Fbasic.ics"
+        sandbox="allow-scripts allow-same-origin allow-top-navigation"
+        allowTransparency="true"
+        scrolling="no"
+        frameborder="0"
+        height="550px"
+        width="100%"
+      ></iframe>
+    </div>
+  </body>
+</html>
