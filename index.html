@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bli med på realfagskonkurranser ved Sandnes videregående skole! Delta i Abelkonkurransen, Fysikkolympiaden, Informatikkolympiaden, og flere spennende realfagskonkurranser. Utfordre dine ferdigheter i realfag og bli en del av vårt inspirerende læringsmiljø. Meld deg på en olympiade i dag og utforsk dine talenter!"
+    />
+
     <title>Realfagsolympiadene Sandnes vgs</title>
     <link rel="icon" href="./images/icon.png" />
 
@@ -41,6 +46,52 @@
         text-decoration: none;
         color: white;
         font-size: 1em;
+      }
+
+      #omOss {
+        display: block;
+
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 40px 5%; /* Changed to percentage-based padding */
+        margin: 40px auto;
+        border-radius: 8px;
+        max-width: 800px;
+        width: 90%; /* Added to ensure some space on the sides */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        font-family: "Arial", sans-serif;
+      }
+
+      #omOss h2 {
+        color: #1a237e;
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #1a237e;
+        padding-bottom: 15px;
+      }
+
+      #omOss p {
+        color: #333;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      /* Media query for very small screens */
+      @media (max-width: 400px) {
+        #omOss {
+          width: 95%; /* Even more width on very small screens */
+          padding: 20px 3%; /* Smaller padding on very small screens */
+        }
+
+        #omOss h2 {
+          font-size: 2em; /* Slightly smaller font size for the heading */
+        }
+
+        #omOss p {
+          font-size: 1em; /* Slightly smaller font size for paragraphs */
+        }
       }
 
       .header {
@@ -160,10 +211,30 @@
 
     <div class="navbar">
       <ul>
+        <li><a href="#omOss">Om oss</a></li>
         <li><a href="#olympiader">Olympiader</a></li>
         <li><a href="#kalender">Kalender</a></li>
-        <li><a href="#omOss">Om oss</a></li>
       </ul>
+    </div>
+
+    <div id="omOss">
+      <h2>Om oss</h2>
+      <p>
+        Velkommen til realfagsklubben på Sandnes videregående skole! Vi er en
+        gjeng med engasjerte elever som elsker realfag. Uansett om du er
+        nybegynner eller allerede har erfaring med matematikk, fysikk, kjemi,
+        informatikk, biologi, astronomi og astrofysikk eller geofag, er du
+        velkommen hos oss.
+      </p>
+      <p>
+        Vi møtes hver tirsdag i fellestiden i rom X. Her kan man møte opp for å
+        lære om de ulike olympiadene og også utfordre seg selv med vanskelige
+        oppgaver innenfor de ulike fagene.
+      </p>
+      <p>
+        Er du nysgjerrig på realfagsolympiadene eller vil vite mer om klubben
+        vår? Kom innom i en av fellestimene! Vi gleder oss til å se deg.
+      </p>
     </div>
 
     <div class="container" id="olympiader">
@@ -189,8 +260,8 @@
         <div class="olympiad-content">
           <h2>Fysikkolympiaden</h2>
           <p>
-            Bli med på Fysikkolympiaden og test dine fysikkunnskaper i en
-            internasjonal konkurranse.
+            Bli med på fysikkolympiaden og test ferdighetene dine med komplekse
+            oppgaver innenfor fysikk.
           </p>
           <a
             class="lesKnapp"
@@ -206,8 +277,8 @@
         <div class="olympiad-content">
           <h2>Informatikkolympiaden</h2>
           <p>
-            Utfordre dine ferdigheter i programmering og algoritmisk
-            problemløsning i Informatikkolympiaden.
+            Informatikkolympiaden lar deg utfordre dine ferdigheter i
+            programmering og algoritmisk problemløsning.
           </p>
           <a class="lesKnapp" href="https://nio.no/" target="_blank">Les mer</a>
         </div>
