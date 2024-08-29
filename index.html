@@ -18,25 +18,33 @@
     <style>
       body {
         font-family: Helvetica, sans-serif;
-        margin: 0;
-        padding: 0;
+
         background-color: #f4f4f4;
       }
 
       html {
         scroll-behavior: smooth;
       }
+      p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #000000;
+      }
+      .modeImg {
+        width: 40px;
+      }
 
       .navbar {
-        background-color: #267cd8;
-        padding: 25px 0;
+        width: fit-content;
+        background-color: #3c81cb;
+        padding: 5px 0;
         text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
       }
 
       .navbar ul {
         list-style-type: none;
-        margin: 0;
+        margin: 10px 20px;
         padding: 0;
         display: inline-flex;
         gap: 30px;
@@ -45,69 +53,136 @@
       .navbar ul li a {
         text-decoration: none;
         color: white;
-        font-size: 1em;
       }
 
-      #omOss {
-        display: block;
-
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 40px 5%; /* Changed to percentage-based padding */
-        margin: 40px auto;
-        border-radius: 8px;
-        max-width: 800px;
-        width: 90%; /* Added to ensure some space on the sides */
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        font-family: "Arial", sans-serif;
+      .navbar ul li a:hover {
+        border-bottom: 2px solid white;
       }
 
-      #omOss h2 {
-        color: #1a237e;
-        text-align: center;
-        font-size: 2.5em;
-        margin-bottom: 30px;
-        border-bottom: 2px solid #1a237e;
-        padding-bottom: 15px;
+      .about-us {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 900px; /* Limits the maximum width of the section */
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 30px auto; /* Keeps the element centered horizontally */
+        width: calc(
+          100% - 60px
+        ); /* Ensures there is always at least 20px margin on each side */
+        animation: fadeIn 0.5s ease-out;
       }
 
-      #omOss p {
-        color: #333;
-        font-size: 1.1em;
-        line-height: 1.8;
+      .about-content {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .about-content h2 {
+        font-size: 2.5rem;
         margin-bottom: 20px;
-        text-align: justify;
+        border-bottom: 3px solid blue;
+        animation: slideRight 0.8s ease-out;
       }
 
-      /* Media query for very small screens */
-      @media (max-width: 400px) {
-        #omOss {
-          width: 95%; /* Even more width on very small screens */
-          padding: 20px 3%; /* Smaller padding on very small screens */
+      .about-content p {
+        animation: slideUp 0.8s ease-out 0.3s both;
+      }
+
+      .read-more-btn {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: white;
+        background-color: blue;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        animation: slideRight 0.8s ease-out;
+      }
+
+      .read-more-btn:hover {
+        background-color: darkblue;
+      }
+
+      .about-image {
+        flex: 1;
+      }
+
+      .about-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        animation: zoomIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideRight {
+        from {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(10px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-us {
+          flex-direction: column;
         }
 
-        #omOss h2 {
-          font-size: 2em; /* Slightly smaller font size for the heading */
-        }
-
-        #omOss p {
-          font-size: 1em; /* Slightly smaller font size for paragraphs */
+        .read-more-btn {
+          margin: 0 auto;
         }
       }
 
       .header {
         text-align: center;
-        margin-bottom: 40px;
       }
 
       h1 {
-        font-size: 1.7em;
+        font-size: 1.5rem;
         color: #000000;
-        text-transform: uppercase;
         letter-spacing: 2px;
-        background-color: #e6f7ff;
-        padding: 20px;
-        border-radius: 8px;
+        background-color: #7bc5e8;
+        padding: 22px 30px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0;
       }
 
       .container {
@@ -126,7 +201,7 @@
         border-bottom: 2px solid black;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         /* overflow: hidden; */
-        width: 320px;
+        width: 300px;
         text-align: center;
         transition: transform 0.2s ease;
         margin-top: 40px;
@@ -158,11 +233,7 @@
         font-size: 1.5em;
         margin: 10px 0;
       }
-
       .olympiad-content p {
-        color: #666;
-        font-size: 1.1em;
-        line-height: 1.6;
         margin-bottom: 20px;
       }
 
@@ -202,39 +273,104 @@
         width: 100%;
         height: 100%;
       }
+
+      body.dark-theme {
+        background-color: #1a1a1a;
+        color: #f4f4f4;
+      }
+
+      body.dark-theme .navbar {
+        background-color: #285687;
+      }
+
+      body.dark-theme .about-us,
+      body.dark-theme .olympiad {
+        background-color: #2a2a2a;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      }
+
+      body.dark-theme .about-content {
+        color: #b8b8b8;
+      }
+
+      body.dark-theme h1 {
+        background-color: #1e5c8f;
+        color: #f4f4f4;
+      }
+
+      body.dark-theme .olympiad-content h2 {
+        color: #7bc5e8;
+      }
+
+      body.dark-theme p {
+        color: #b8b8b8;
+      }
+
+      body.dark-theme .lesKnapp {
+        background-color: #3c81cb;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 10px;
+        right: 5px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        background: transparent;
+      }
+
+      @media (max-width: 768px) {
+        .modeImg {
+          width: 30px;
+        }
+
+        .theme-toggle {
+          right: -5px;
+        }
+      }
     </style>
   </head>
   <body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <img
+        class="modeImg"
+        src="https://static-00.iconduck.com/assets.00/mode-light-icon-512x512-yuubs6qt.png"
+        alt="Bilde av nattmodus"
+      />
+    </button>
+
     <div class="header">
       <h1>Realfagsolympiadene på Sandnes videregående skole</h1>
     </div>
 
-    <div class="navbar">
-      <ul>
-        <li><a href="#omOss">Om oss</a></li>
-        <li><a href="#olympiader">Olympiader</a></li>
-        <li><a href="#kalender">Kalender</a></li>
-      </ul>
+    <div class="navbarContainer">
+      <div class="navbar">
+        <ul>
+          <li><a href="#omOss">Om oss</a></li>
+          <li><a href="#olympiader">Olympiader</a></li>
+          <li><a href="#kalender">Kalender</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div id="omOss">
-      <h2>Om oss</h2>
-      <p>
-        Velkommen til realfagsklubben på Sandnes videregående skole! Vi er en
-        gjeng med engasjerte elever som elsker realfag. Uansett om du er
-        nybegynner eller allerede har erfaring med matematikk, fysikk, kjemi,
-        informatikk, biologi, astronomi og astrofysikk eller geofag, er du
-        velkommen hos oss.
-      </p>
-      <p>
-        Vi møtes hver tirsdag i fellestiden i rom X. Her kan man møte opp for å
-        lære om de ulike olympiadene og også utfordre seg selv med vanskelige
-        oppgaver innenfor de ulike fagene.
-      </p>
-      <p>
-        Er du nysgjerrig på realfagsolympiadene eller vil vite mer om klubben
-        vår? Kom innom i en av fellestimene! Vi gleder oss til å se deg.
-      </p>
+    <div class="about-us">
+      <div class="about-content">
+        <h2>Om Oss</h2>
+        <p>
+          Velkommen til abelgruppen på Sandnes videregående skole! Vi er en
+          gruppe entusiastiske elever som brenner for realfag, og vi ønsker alle
+          velkommen til å utforske spennende temaer sammen med oss, fra matte,
+          fysikk og kjemi til astronomi og informatikk.
+        </p>
+      </div>
+      <div class="about-image">
+        <img
+          src="https://i.pinimg.com/564x/95/08/c7/9508c70b5dc8b7bb2e53d6f567e25ff8.jpg"
+          alt="About Us Image"
+        />
+      </div>
     </div>
 
     <div class="container" id="olympiader">
@@ -356,6 +492,7 @@
         </div>
       </div>
     </div>
+
     <!-- https://calendar.google.com/calendar/u/0?cid=a29zdGFyZHZlcmNoaW9tQGdtYWlsLmNvbQ -->
     <div id="kalender" class="responsive-iframe">
       <h2>Kommende arrangementer</h2>
@@ -368,11 +505,35 @@
         style="width: 100%; border: none"
         data-cy="calendar-embed-iframe"
       ></iframe>
+
       <script
         async
         type="module"
         src="https://embed.styledcalendar.com/assets/parent-window.js"
       ></script>
+
+      <script>
+        function toggleTheme() {
+          const body = document.body;
+          body.classList.toggle("dark-theme");
+
+          const isDarkTheme = body.classList.contains("dark-theme");
+          localStorage.setItem("dark-theme", isDarkTheme);
+
+          const img = document.querySelector(".modeImg");
+          img.src = isDarkTheme
+            ? "https://cdn-icons-png.flaticon.com/512/6714/6714978.png"
+            : "https://static-00.iconduck.com/assets.00/mode-light-icon-512x512-yuubs6qt.png";
+          // button.textContent = isDarkTheme ? "Lys" : "Mørk";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const savedTheme = localStorage.getItem("dark-theme");
+          if (savedTheme === "true") {
+            document.body.classList.add("dark-theme");
+          }
+        });
+      </script>
     </div>
   </body>
 </html>
