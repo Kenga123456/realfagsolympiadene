@@ -65,7 +65,7 @@
         justify-content: space-between;
         max-width: 900px; /* Limits the maximum width of the section */
         background-color: white;
-        padding: 20px;
+        padding: 10px;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         margin: 30px auto; /* Keeps the element centered horizontally */
@@ -76,8 +76,8 @@
       }
 
       .about-content {
-        flex: 1;
-        padding: 20px;
+        flex: 4;
+        padding: 10px;
       }
 
       .about-content h2 {
@@ -110,7 +110,7 @@
       }
 
       .about-image {
-        flex: 1;
+        flex: 3;
       }
 
       .about-image img {
@@ -166,6 +166,10 @@
           flex-direction: column;
         }
 
+        .about-content h2 {
+          text-align: center;
+        }
+
         .read-more-btn {
           margin: 0 auto;
         }
@@ -200,12 +204,19 @@
         border-radius: 10px;
         border-bottom: 2px solid black;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* overflow: hidden; */
         width: 300px;
         text-align: center;
         transition: transform 0.2s ease;
         margin-top: 40px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
         padding-bottom: 8px;
+      }
+
+      .olympiad-animation.in-view {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .olympiad:hover {
@@ -329,6 +340,15 @@
         .theme-toggle {
           right: -5px;
         }
+      }
+
+      /* Applying animations to the header and navbar */
+      .header {
+        animation: fadeInFromTop 0.8s ease-out;
+      }
+
+      .navbar {
+        animation: fadeInFromLeft 0.8s ease-out;
       }
     </style>
   </head>
@@ -524,7 +544,6 @@
           img.src = isDarkTheme
             ? "https://cdn-icons-png.flaticon.com/512/6714/6714978.png"
             : "https://static-00.iconduck.com/assets.00/mode-light-icon-512x512-yuubs6qt.png";
-          // button.textContent = isDarkTheme ? "Lys" : "Mørk";
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -532,6 +551,24 @@
           if (savedTheme === "true") {
             document.body.classList.add("dark-theme");
           }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in-view");
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+
+          document.querySelectorAll(".olympiad").forEach((olympiad) => {
+            olympiad.classList.add("olympiad-animation");
+            observer.observe(olympiad);
+          });
         });
       </script>
     </div>
