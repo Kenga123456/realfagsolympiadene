@@ -17,8 +17,8 @@
     />
     <style>
       body {
-        font-family: Helvetica, sans-serif;
-
+        font-family: "Helvetica", "sans-serif";
+        margin-top: 0;
         background-color: #f4f4f4;
       }
 
@@ -30,14 +30,23 @@
         line-height: 1.6;
         color: #000000;
       }
+
       .modeImg {
         width: 40px;
+        z-index: 2;
+        position: relative;
+      }
+
+      .navbarContainer {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
       }
 
       .navbar {
         width: fit-content;
         background-color: #3c81cb;
-        padding: 5px 0;
+        padding: 12px 0;
         text-align: center;
         width: 100%;
       }
@@ -313,6 +322,9 @@
         color: #7bc5e8;
       }
 
+      body.dark-theme .olympiad {
+        border: 0px solid rgb(132, 255, 0);
+      }
       body.dark-theme p {
         color: #b8b8b8;
       }
@@ -323,8 +335,9 @@
 
       .theme-toggle {
         position: fixed;
-        top: 10px;
-        right: 5px;
+        z-index: 2;
+        top: 2px;
+        right: 20px;
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
@@ -333,10 +346,6 @@
       }
 
       @media (max-width: 768px) {
-        .modeImg {
-          width: 30px;
-        }
-
         .theme-toggle {
           right: -5px;
         }
@@ -350,14 +359,57 @@
       .navbar {
         animation: fadeInFromLeft 0.8s ease-out;
       }
+
+      .faq-section {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-section h2 {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .faq-item {
+        margin-bottom: 20px;
+      }
+
+      .faq-question {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .faq-answer {
+        color: #666;
+      }
+
+      body.dark-theme .faq-section {
+        background-color: #2a2a2a;
+      }
+
+      body.dark-theme .faq-question {
+        color: #e0e0e0;
+      }
+
+      body.dark-theme .faq-answer {
+        color: #b0b0b0;
+      }
     </style>
   </head>
   <body>
     <button class="theme-toggle" onclick="toggleTheme()">
       <img
         class="modeImg"
-        src="https://static-00.iconduck.com/assets.00/mode-light-icon-512x512-yuubs6qt.png"
-        alt="Bilde av nattmodus"
+        src=""
+        alt="Bilde av
+      natt/lys modus"
       />
     </button>
 
@@ -375,7 +427,7 @@
       </div>
     </div>
 
-    <div class="about-us">
+    <div class="about-us" id="omOss">
       <div class="about-content">
         <h2>Om Oss</h2>
         <p>
@@ -525,6 +577,59 @@
         style="width: 100%; border: none"
         data-cy="calendar-embed-iframe"
       ></iframe>
+      <!-- <div class="faq-section">
+        <h2>Ofte stilte spørsmål</h2>
+
+        <div class="faq-item">
+          <p class="faq-question">
+            Spørsmål 1: Hvem kan delta i realfagsolympiadene?
+          </p>
+          <p class="faq-answer">
+            Svar: Alle elever ved Sandnes videregående skole som er interessert
+            i realfag kan delta. Det er ingen krav om toppkarakterer, bare en
+            genuin interesse for faget.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">
+            Spørsmål 2: Hvordan forbereder jeg meg til en olympiade?
+          </p>
+          <p class="faq-answer">
+            Svar: Vi anbefaler å løse tidligere års oppgaver, delta på våre
+            forberedelsesmøter, og ikke minst, snakke med lærerne dine om ekstra
+            ressurser.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">
+            Spørsmål 3: Når foregår de ulike olympiadene?
+          </p>
+          <p class="faq-answer">
+            Svar: De fleste olympiadene har første runde på høsten, med videre
+            runder utover våren. Sjekk kalenderen vår for nøyaktige datoer.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">Spørsmål 4: Hva kan jeg vinne?</p>
+          <p class="faq-answer">
+            Svar: Premiene varierer mellom olympiadene, men kan inkludere alt
+            fra medaljer og diplomer til muligheten for å representere Norge i
+            internasjonale konkurranser.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">Spørsmål 5: Hvordan melder jeg meg på?</p>
+          <p class="faq-answer">
+            Svar: Påmelding skjer vanligvis gjennom faglæreren din eller direkte
+            til olympiadekoordinatoren ved skolen. Hold øye med oppslagstavler
+            og skolens nettside for mer informasjon.
+          </p>
+        </div>
+      </div> -->
 
       <script
         async
@@ -533,6 +638,13 @@
       ></script>
 
       <script>
+        let darkImg =
+          "https://static-00.iconduck.com/assets.00/mode-light-icon-512x512-yuubs6qt.png";
+        let lightImg =
+          "https://cdn-icons-png.flaticon.com/512/6714/6714978.png";
+
+        const img = document.querySelector(".modeImg");
+
         function toggleTheme() {
           const body = document.body;
           body.classList.toggle("dark-theme");
@@ -540,16 +652,17 @@
           const isDarkTheme = body.classList.contains("dark-theme");
           localStorage.setItem("dark-theme", isDarkTheme);
 
-          const img = document.querySelector(".modeImg");
-          img.src = isDarkTheme
-            ? "https://cdn-icons-png.flaticon.com/512/6714/6714978.png"
-            : "https://static-00.iconduck.com/assets.00/mode-light-icon-512x512-yuubs6qt.png";
+          img.src = isDarkTheme ? darkImg : lightImg;
         }
 
         document.addEventListener("DOMContentLoaded", () => {
           const savedTheme = localStorage.getItem("dark-theme");
+
           if (savedTheme === "true") {
             document.body.classList.add("dark-theme");
+            img.src = darkImg; // Set dark theme icon if dark theme is active
+          } else {
+            img.src = lightImg; // Set light theme icon if dark theme is not active
           }
         });
 
@@ -562,7 +675,7 @@
                 }
               });
             },
-            { threshold: 0.1 }
+            { threshold: 0.01 }
           );
 
           document.querySelectorAll(".olympiad").forEach((olympiad) => {
