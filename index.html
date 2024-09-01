@@ -20,7 +20,7 @@
       :root {
         --primary-color: #3c81cb;
         --secondary-color: #0056b3;
-        --background-color: #f4f4f4;
+        --background-color: #f0f0f0;
         --text-color: #000000;
         --card-background: #ffffff;
         --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -51,7 +51,6 @@
       /* Header styles */
       .header {
         text-align: center;
-        animation: fadeInFromTop 0.8s ease-out;
       }
 
       .header h1 {
@@ -61,11 +60,11 @@
         margin: 0;
       }
 
-      /* Navigation styles */
       .navbarContainer {
         position: sticky;
         top: 0;
         z-index: 1;
+        animation: fadeInFromLeft 0.6s ease-out;
       }
 
       .navbar {
@@ -73,7 +72,6 @@
         padding: 12px 0;
         text-align: center;
         width: 100%;
-        animation: fadeInFromLeft 0.8s ease-out;
       }
 
       .navbar ul {
@@ -101,7 +99,7 @@
         max-width: 900px;
         background-color: var(--card-background);
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 5px;
         box-shadow: var(--card-shadow);
         margin: 30px auto;
         width: calc(100% - 60px);
@@ -136,6 +134,7 @@
         max-width: 90%;
 
         animation: zoomIn 1s ease-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
 
       /* Olympiad cards */
@@ -151,7 +150,6 @@
       .olympiad {
         background-color: var(--card-background);
         border-radius: 10px;
-        border-bottom: 2px solid black;
         box-shadow: var(--card-shadow);
         width: 300px;
         text-align: center;
@@ -168,14 +166,18 @@
       }
 
       .olympiad:hover {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
       }
 
       .olympiad img {
+        border-radius: 10px 10px 0 0;
         width: 100%;
-        border-bottom: 3px solid black;
-        border-top: 3px solid black;
+        box-sizing: border-box;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
         display: block;
+        padding: 6px 6px 0 6px;
       }
 
       .olympiad-content {
@@ -271,12 +273,11 @@
       }
 
       body.dark-theme {
-        --background-color: #1a1a1a;
-        --text-color: white;
-        --card-background: #2a2a2a;
-        --card-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-        --primary-color: rgb(6, 39, 72);
-        --secondary-color: #549dbf;
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --card-background: #181818;
+        --primary-color: #3a6ea5;
+        --secondary-color: #5ec1d4;
       }
 
       body.dark-theme .header h1 {
@@ -342,17 +343,6 @@
         }
       }
 
-      @keyframes fadeInFromTop {
-        from {
-          transform: translateY(-20px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
       @keyframes fadeInFromLeft {
         from {
           transform: translateX(-20px);
@@ -379,7 +369,7 @@
         }
 
         .theme-toggle {
-          right: -5px;
+          right: 0px;
         }
       }
     </style>
@@ -657,6 +647,19 @@
         buttonEl.addEventListener("click", function () {
           buttonEl.classList.toggle("animation");
           console.log("wdj");
+        });
+
+        let olympiadDivs = document.querySelectorAll(".olympiad");
+
+        olympiadDivs.forEach((div) => {
+          const linkElement = div.querySelector("a");
+
+          const linkHref = linkElement.href;
+
+          // Set the onclick event for the div to redirect to the link
+          div.onclick = () => {
+            window.location.href = linkHref;
+          };
         });
       </script>
     </div>
