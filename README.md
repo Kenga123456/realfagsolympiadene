@@ -1,6 +1,6 @@
 # Realfagsolympiadene på Sandnes vgs
 
-Dette prosjektet er laget for å fremme interessen for realfag ved Sandnes videregående skole gjennom å tilby en oversikt over forskjellige realfagsolympiader. Ved å bruke denne nettsiden kan man holde seg oppdatert på de ulike olympiadene og deres tidspunkter gjennom en innebygd kalender.
+Dette prosjektet er laget for å fremme interessen for realfag ved Sandnes videregående skole gjennom å tilby en oversikt over forskjellige realfagsolympiader. Ved å bruke denne nettsiden kan man holde seg oppdatert på de ulike olympiadene og deres tidspunkter gjennom en innebygd kalender. Det har en innebygd dark mode og light mode som brukeren kan selv velge mellom. 
 
 ## Innhold
 
