@@ -37,10 +37,9 @@
         scroll-behavior: smooth;
       }
 
-      /* Typography */
       h1 {
-        font-size: 1.5rem;
-        letter-spacing: 2px;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
       }
 
       p {
@@ -78,7 +77,8 @@
         list-style-type: none;
         margin: 10px 20px;
         padding: 0;
-        display: inline-flex;
+        display: flex;
+        justify-content: center;
         gap: 30px;
       }
 
@@ -137,7 +137,6 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
 
-      /* Olympiad cards */
       .container {
         margin: 0 auto;
         padding: 0 10% 20px;
@@ -226,7 +225,7 @@
       }
 
       .theme-toggle {
-        position: fixed;
+        position: absolute;
         z-index: 2;
         top: 7px;
         right: 20px;
@@ -274,31 +273,40 @@
 
       body.dark-theme {
         --background-color: #121212;
-        --text-color: #e0e0e0;
-        --card-background: #181818;
+        --card-background: #232323;
+
+        --text-color: #ffffff;
         --primary-color: #3a6ea5;
-        --secondary-color: #5ec1d4;
+        --secondary-color: #67d0e6;
       }
 
       body.dark-theme .header h1 {
         background-color: #1e5c8f;
-        color: var(--text-color);
-      }
-
-      body.dark-theme .olympiad-content h2 {
-        color: var(--secondary-color);
-      }
-
-      body.dark-theme .olympiad {
-        border: 0px solid rgb(132, 255, 0);
       }
 
       body.dark-theme p {
-        color: #b8b8b8;
+        color: #e5e5e5;
+        margin: 5px;
       }
 
       body.dark-theme .lesKnapp {
         background-color: var(--primary-color);
+      }
+
+      body.dark-theme .olympiad img {
+        filter: brightness(80%);
+      }
+
+      body.dark-theme .about-image {
+        padding: 7px 0;
+      }
+
+      body.dark-theme .about-content {
+        padding-bottom: 0;
+      }
+
+      body.dark-theme .container {
+        gap: 0px;
       }
 
       @keyframes fadeIn {
@@ -369,23 +377,15 @@
         }
 
         .theme-toggle {
-          right: 0px;
+          right: 0;
         }
       }
     </style>
   </head>
   <body>
-    <button class="theme-toggle" onclick="toggleTheme()">
-      <img
-        class="modeImg"
-        src=""
-        alt="Bilde av
-      natt/lys modus"
-      />
-    </button>
-
     <div class="header">
       <h1>Realfagsolympiadene på Sandnes videregående skole</h1>
+      <!-- <h1>Realfagsolympiadene på Sandnes vgs</h1> -->
     </div>
 
     <div class="navbarContainer">
@@ -396,6 +396,14 @@
           <li><a href="#kalender">Kalender</a></li>
         </ul>
       </div>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <img
+          class="modeImg"
+          src=""
+          alt="Bilde av
+        natt/lys modus"
+        />
+      </button>
     </div>
 
     <div class="about-us" id="omOss">
